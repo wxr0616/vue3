@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录和注册</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <link rel="stylesheet" href="ceshi.css">
+</head>
+<body>
+    <div id="container">
+        <div class="box1">
+            <span><li id="d" @click="toggleLogin">登录</li></span><br>
+            <div class="denglu" id="deng">
+                用户名:<input type="text" id="username" placeholder="用户名"><br>
+                密码:<input type="password" id="password" placeholder="密码"><br>
+                <center><input value="登录" type="button" id="btn"</center>
+            </div>
+        </div>
+        <div class="box2">
+            <span><li id="z" @click="toggleRegister">>注册</li></span><br>
+            <div class="denglu" id="zhu">
+                用户名:<input type="text" id="newUsername" placeholder="用户名"><br>
+                密码:<input type="password" id="newPassword" placeholder="密码"><br>
+                <center><input value="注册" type="button" id="btn2"></center>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                showLogin: true,
+                showRegister: false
+            };
+        },
+        methods: {
+            toggleLogin() {
+                this.showLogin = true;
+                this.showRegister = false;
+            },
+            toggleRegister() {
+                this.showLogin = false;
+                this.showRegister = true;
+            }
+        }
+    });
+    app.mount('#container');
+</script>
+
+</html>
